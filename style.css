@@ -1,0 +1,37 @@
+
+*{
+
+margin:0;
+
+padding:0;
+
+}
+
+body, html{height:100%;}
+
+body{
+	background: darkcyan;
+}
+.d0{
+	height: 100px;
+	width: 100px;
+}
+button{
+	height: 100px;
+	width: 100px;
+	border-radius:90% 90% 90% 90%;
+	margin-top: 300px;
+	margin-left:600px ;
+	margin-right:500px ;
+}
+
+.d1{
+	height: 200px;
+	width: 200px;
+	margin-top: 400px;
+	margin-left:550px ;
+	margin-right:500px ;
+}
+p{
+	background-color: cyan;
+}

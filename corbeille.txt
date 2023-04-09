@@ -1,0 +1,275 @@
+context.fillStyle='#DC7633';
+window.addEventListener("mousemove",function (event) {
+
+
+    context.clearRect(0,0,cercle.width,cercle.height);
+
+    context.beginPath();
+
+    context.arc(event.clientX, event.clientY , 25, 0 , Math.PI*2, true);
+
+    context.fill();
+
+    context.closePath();
+
+
+});
+window.addEventListener("click",function (event) {
+    switch (context.fillStyle) {
+        case "#2E86C1":{ context.fillStyle='#28B463';break;}
+        case "#28B463":{context.fillStyle='#DC7633';break;}
+        case "#DC7633":{ context.fillStyle='#2E86C1';break}              
+       
+    }
+
+    
+    context.clearRect(0,0,cercle.width,cercle.height);
+
+    context.beginPath();
+
+    context.arc(event.clientX, event.clientY , 25, 0 , Math.PI*2, true);
+
+    context.fill();
+
+    context.closePath();
+
+
+});
+
+
+
+
+
+
+
+	context.fillStyle="#ff0000";
+	window.addEventListener("mousemove", function(event){
+		context.clearRect(0, 0, canvas.width, canvas.height);
+		context.beginPath(); 
+		context.arc(event.clientX, event.clientY, 25, 0, Math.PI*2); 
+		context.fill(); 
+		context.closePath();
+		});
+	window.addEventListener("click", function(event){
+		switch(context.fillStyle)
+		{
+
+			case "#00ff00": {context.fillStyle="#0000ff";break;}
+			case "#ff0000": {context.fillStyle="#00ff00";break;}
+			case "#0000ff": {context.fillStyle="#ff0000";break;}
+		}
+		context.clearRect(0, 0, canvas.width, canvas.height);
+		context.beginPath(); 
+		context.arc(event.clientX, event.clientY, 25, 0, Math.PI*2); 
+		context.fill(); 
+		context.closePath();
+		});
+}
+
+
+
+
+
+
+switch(event.keyCode)
+		{
+			case 13: {
+				if (forme==1) 
+					forme=0;
+				else
+					forme=1;
+				break;
+			}
+			case 40: {
+				if(posY<=canvas.height)
+					posY+=10;
+				break;
+			}
+			case 38: {
+				if(posY>0)
+					posY-=10;
+				break;
+			}
+			case 37: {
+				if(posX>0)
+					posX-=10;
+				break;
+			}
+			case 39: {
+				if(posX<=canvas.width)
+					posX+=10;
+				break;
+			}
+			case 66: {context.fillStyle="#0000ff";break;}
+			case 71: {context.fillStyle="#00ff00";break;}
+			case 82: {context.fillStyle="#ff0000";break;}
+		}
+
+
+
+
+
+
+		  switch (event.keycode) {
+        case 13 : {
+            if (etat==1) 
+            etat=0;
+            else
+            etat=1;
+            break;}
+
+        case 37: {    
+            if (xPos>0) {
+                xPos-=10; 
+            }
+             break;
+            }
+
+        case 39: { 
+
+            if (xPos<=cercle.width) {
+                xPos+=10;
+            }
+            break;
+        }
+
+        case 38 : {
+            if (yPos>0) {
+                yPos-=10;
+            }
+            break;
+        }
+
+        case 40: { 
+            if (yPos<=cercle.height) {
+                yPos+=10;
+            }
+            break;
+        }
+
+        case 74: {context.fillStyle='#ffff00';break;}
+        case 86 : {context.fillStyle='#00ff00';break;}
+        case 66: {context.fillStyle='#cceeff';break;}
+
+       
+    }
+
+
+
+
+
+
+
+
+
+
+
+  /**premier cercle verticale
+      
+            if (yPos<=0 ) {
+                sens=1;
+                
+            } else if(yPos>=canva.height-50  ) {
+                sens=-1;
+            }
+
+            yPos+=sens*10;
+            context.clearRect(0,0,canva.width,canva.height);
+            context.beginPath();
+            context.arc(xPos,yPos,25,0,Math.PI*2,true);
+            context.fill();
+            context.closePath();
+
+       //deuxième cercle horizontale
+
+     /**  if (posX>=canva.width-50) {
+
+        sens=-1;
+        
+        } else if(posX<=0 ) {
+
+            sens=1;
+            
+        }
+        posX+=sens*10;
+        context.clearRect(0,0,canva.width,canva.height);
+        context.beginPath();
+        context.arc(posX,posY,25,0,Math.PI*2,true);
+        context.stroke();
+        context.closePath();*/ 
+
+
+
+
+
+
+        function MyCircles(Y,sprite,vitesse) {
+    this.X=0;
+    this.Y=Y;
+    this.sprite=color;
+    this.vitesse=vitesse
+    this.sens=1;
+    
+}
+
+
+var blue = getElementById("bleue");
+var red = getElementById("rouge");
+var green = getElementById("vert");
+window.onload=function () {
+
+    var canva = document.getElementById('canva');
+    if (!canva) {
+        alert("Impossible de récuperer le canvas")
+      }
+    var context = canva.getContext("2d") ;
+    
+    if (!context) {
+        alert("Impossible de récuperer le contexte du canvas")
+        }
+
+    var temps= Math.round(Math.random()*((200-100))+100);
+    var xPos= Math.round(Math.random()*((400-100))+100);
+
+    var tableY= new Array(100,200,250);
+
+    var sprites= new Array(red,blue,green);
+    var circles=new Array();
+
+    for(var yPos in tableY)
+	{
+        var vitesse=5+Math.random()*10;
+        var color=Math.round(Math.random()*(sprites.length- 1));
+        circles[circles.length]=new MyCircles(tableY[yPos],sprites[color],vitesse);
+	}
+
+    var myInterval=setInterval(anime,temps);
+    function anime() {
+
+        context.clearRect(0, 0, canva.width, canva.height);
+
+        for (var yPos in circles) {
+
+                if (circles[yPos].Y<=0 ) {
+                    circles[yPos].sens=1;
+                    var j = Math.round(Math.random()*(sprites.length- 1));
+                    circles[yPos].sprite= sprites[j];
+                    
+                } else if(circles[yPos].Y>=canva.height-50  ) {
+                    circles[yPos].sens=-1;
+                    var j = Math.round(Math.random()*(sprites.length- 1));
+                    circles[yPos].sprite = sprites[j];
+                }
+    
+                circles[yPos].Y+=circles[yPos].sens*circles[yPos].vitesse;
+
+                context.drawImage(circles[yPos].sprite, 0, 0, 32, 31,circles[yPos].X, circles[yPos].Y, circles[yPos].sprite.width, circles[yPos].sprite.height);
+                
+            
+        }
+      
+    }
+
+   
+   
+}

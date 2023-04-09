@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #image{
+            display: none;
+        }
+        #canvas{
+            border: 2px solid red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <img id="image" src="screen/yourname.png" alt="" srcset="">
+
+    <script >
+        var essaie = document.getElementById('canvas');
+        if (!essaie) {
+          alert("Impossible de récuperer le canvas")
+        }
+        var ctx = essaie.getContext('2d');
+        if (!ctx) {
+          alert("Impossible de récuperer le contexte du canvas")
+          }
+        var image= document.getElementById("image");
+                
+        image.addEventListener('load',affiche);
+        ctx.rotate(Math.PI/9) ;
+        function affiche() {
+          ctx.drawImage(image,50,25,500,350);
+        }
+                          
+    </script>
+
+</body>
+</html>

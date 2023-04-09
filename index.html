@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" language="JavaScript">
+     
+       function user() {
+
+                     age = prompt("Donnez votre âge : ");
+                      var p = document.querySelector('p');
+                        if (age>=18 && age<=65) {
+                           questions= prompt("Que puis-je faire pour vous?");
+
+                            confirm("Votre demande a été prise en compte");
+
+
+                            p.innerHTML = "Vous avez "+" " + age+" "+" et votre demande est :"+" "+questions;
+                        }else{
+                            alert("Votr age est inférieur à 18 ans");
+                }
+            
+        }
+ </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>psychoone</title>
+</head>
+<body onUnload=user();>
+      <div align="center"class="d0">
+          <button onclick="user()">Click on me</button>
+      </div>
+
+      <div align="center" class="d1">
+        <p></p>
+      </div>
+
+    <p></p>
+ 
+</body>
+</html>
