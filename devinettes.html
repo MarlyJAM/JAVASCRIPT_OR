@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="devinette.css">
+    <title>devinette</title>
+</head>
+<body>
+    
+    
+    <center>
+           <div>
+            <p>Quel est l'autre nom de la colonne vertebrale?</p>
+           </div>
+           <div>
+              <table>
+               <tr>
+                   <td>
+                       <button > Fémur </button>
+                   </td>
+                   <td>
+                       <button >Echine</button>
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       <button > Antebrachium</button>
+                   </td>
+                   <td>
+                       <button> Culmen</button>
+                   </td>
+               </tr>
+              </table>
+   
+              <h4></h4>
+           </div>
+    </center>
+
+    <script>
+        const buttons= document.querySelectorAll("button");
+        
+        for(let i=0; i < buttons.length; i++){
+            buttons[i].addEventListener("click", function(){
+                const joueur = buttons[i].innerHTML;
+
+                if(joueur === "Echine" ) {
+                    alert("Gagné");
+                    document.location.href="entree.html";
+                } 
+                else {
+                    document.location.href="entree.html";
+                      alert("Perdu");
+                }
+
+            });
+        
+        }
+    </script>
+
+
+</body>
+</html>

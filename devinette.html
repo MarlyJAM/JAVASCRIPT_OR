@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="devinette.css">
+    <title>devinette</title>
+</head>
+<body>
+    <center>
+        <div>
+         <p>Quel est l'autre nom de la trisomie 18?</p>
+        </div>
+        <div>
+           <table>
+            <tr>
+                <td>
+                    <button >Syndrome de Down</button>
+                </td>
+                <td>
+                    <button>Syndrome de Patau</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button >Trisomie E</button>
+                </td>
+                <td>
+                    <button >Syndrome de Turner</button>
+                </td>
+            </tr>
+           </table>
+
+           <h4></h4>
+        </div>
+    </center>
+
+    <script>   
+        const buttons= document.querySelectorAll("button");
+        
+        for(let i=0; i <buttons.length; i++){
+            buttons[i].addEventListener("click", function(){
+                const joueur = buttons[i].innerHTML;
+
+                if ( joueur ==="Trisomie E" ) {
+                    alert("Allons au suivant");
+                    document.location.href="devine.html";
+
+                  } else {
+
+                      alert("PERDU(E)");
+                      document.location.href="entree.html";
+                      
+                  }
+
+            });
+        
+        }
+        
+    </script>
+
+|
+
+</body>
+</html>

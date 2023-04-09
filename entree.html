@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvas{
+            border: 2px solid red;
+            background-image: url("bulle.jpg");
+            margin-top: 150px;
+        }
+        img{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <canvas id="canvas" width="500" height="300"></canvas>
+         <a href="devinette.html"> <img id="image" src="jouer.png" alt=""></a>
+    </center>
+
+    <script >
+        var essaie = document.getElementById('canvas');
+        if (!essaie) {
+          alert("Impossible de récuperer le canvas")
+        }
+        var ctx = essaie.getContext('2d');
+        if (!ctx) {
+          alert("Impossible de récuperer le contexte du canvas")
+          }
+        var image= document.getElementById("image");
+                
+        image.addEventListener('load',affiche);
+        function affiche() {
+          ctx.drawImage(image,200,125,100,50);
+        }
+        essaie.addEventListener("click",function (){
+            document.location.href="devinette.html";
+        });
+    </script>         
+  
+</body>
+</html>

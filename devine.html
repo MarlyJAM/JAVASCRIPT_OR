@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="devinette.css">
+    <title>devinette</title>
+</head>
+<body>
+    
+    
+    <center>
+
+        <div>
+            <p>Quel est la partie du cerveau qui gère la mémoire?</p>
+           </div>
+           <div>
+              <table>
+               <tr>
+                   <td>
+                       <button >L'hippocampe</button>
+                   </td>
+                   <td>
+                       <button >Néocortex</button>
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       <button >Hypophyse</button>
+                   </td>
+                   <td>
+                       <button >Thalamus</button>
+                   </td>
+               </tr>
+              </table>
+   
+              <h4></h4>
+           </div>
+
+
+
+    </center>
+
+    <script>
+
+      const buttons= document.querySelectorAll("button");
+        
+        for(let i=0; i <buttons.length; i++){
+            buttons[i].addEventListener("click", function(){
+                const joueur = buttons[i].innerHTML;
+
+                if (joueur ==="L'hippocampe") {
+                    alert("Allons au suivant");
+                    document.location.href="devines.html";
+
+                  } else {
+                      document.location.href="entree.html";
+                      alert("Perdu");
+                  }
+
+            });
+        
+        }
+        
+    </script>
+
+|
+
+</body>
+</html>
